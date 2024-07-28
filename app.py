@@ -1,15 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[7]:
-
-
-#pip install streamlit pandas numpy matplotlib scipy
-
-
-# In[12]:
-
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -168,10 +156,3 @@ if uploaded_file:
         
         else:
             st.write("No Anomalies detected in second-digit test.")
-
-
-# In[ ]:
-
-
-
-
