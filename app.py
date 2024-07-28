@@ -73,7 +73,7 @@ if uploaded_file:
     # Select column
     selected_column = st.selectbox("Select Column", columns)
     
-    if st.button('Go'):
+    if selected_column:
         data = df[selected_column].dropna()
         data = pd.to_numeric(data, errors='coerce').dropna()
 
