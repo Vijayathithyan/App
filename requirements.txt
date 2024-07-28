@@ -1,6 +1,7 @@
+
+setuptools
 streamlit
 pandas
 numpy
 matplotlib
 scipy
-distutils
