@@ -1,3 +1,15 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[7]:
+
+
+#pip install streamlit pandas numpy matplotlib scipy
+
+
+# In[12]:
+
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -61,7 +73,7 @@ if uploaded_file:
     # Select column
     selected_column = st.selectbox("Select Column", columns)
     
-    if selected_column:
+    if st.button('Go'):
         data = df[selected_column].dropna()
         data = pd.to_numeric(data, errors='coerce').dropna()
 
@@ -78,7 +90,7 @@ if uploaded_file:
         first_digit_counts = first_digit_distribution * len(data)
         
         # Chi-square test for first digits
-        first_digit_expected_counts = [benford_first_digit[d] * len(data) for d in range(1, 9)]
+        first_digit_expected_counts = [benford_first_digit[d] * len(data) for d in range(1, 10)]
         first_digit_observed_counts = first_digit_counts.values
         chi2, p_value = chi2_contingency([first_digit_observed_counts, first_digit_expected_counts])[:2]
         
@@ -156,3 +168,10 @@ if uploaded_file:
         
         else:
             st.write("No Anomalies detected in second-digit test.")
+
+
+# In[ ]:
+
+
+
+
