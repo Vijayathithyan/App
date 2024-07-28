@@ -78,7 +78,7 @@ if uploaded_file:
         first_digit_counts = first_digit_distribution * len(data)
         
         # Chi-square test for first digits
-        first_digit_expected_counts = [benford_first_digit[d] * len(data) for d in range(1, 10)]
+        first_digit_expected_counts = [benford_first_digit[d] * len(data) for d in range(1, 9)]
         first_digit_observed_counts = first_digit_counts.values
         chi2, p_value = chi2_contingency([first_digit_observed_counts, first_digit_expected_counts])[:2]
         
